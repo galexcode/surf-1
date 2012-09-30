@@ -21,7 +21,18 @@ static char *strictssl      = FALSE; /* Refuse untrusted SSL connections */
 	"xterm -e \"wget '$0' \
 --load-cookies ~/.surf/cookies.txt \
 --user-agent '$1' ; sleep 5\"", d, useragent, NULL } }
+
+
+static SearchEngine searchengines[] = {
+    { "g",   "http://www.google.com/search?hl=en&complete=0&SA=N&q=%s"   },
+};
+
+#define HOMEPAGE "http://www.google.com/webhp?hl=en&complete=0&SA=N"
+
+
 #define MODKEY GDK_CONTROL_MASK
+
+
 static Key keys[] = {
     /* modifier	            keyval      function    arg             Focus */
     { MODKEY|GDK_SHIFT_MASK,GDK_r,      reload,     { .b = TRUE } },
@@ -43,7 +54,7 @@ static Key keys[] = {
     { 0,                    GDK_Escape, stop,       { 0 } },
     { MODKEY,               GDK_o,      source,     { 0 } },
     { MODKEY,               GDK_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO") },
-    { MODKEY,               GDK_f,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND") },
+    { 0,      	  	       GDK_slash,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND") },
     { MODKEY,               GDK_n,      find,       { .b = TRUE } },
     { MODKEY|GDK_SHIFT_MASK,GDK_n,      find,       { .b = FALSE } },
 };

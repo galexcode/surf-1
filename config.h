@@ -24,10 +24,10 @@ static char *strictssl      = FALSE; /* Refuse untrusted SSL connections */
 
 
 static SearchEngine searchengines[] = {
-    { "g",   "http://www.google.com/search?hl=en&complete=0&SA=N&q=%s"   },
+    { "g",   "http://www.google.com/search?hl=en&complete=0&safe=off&q=%s"   },
 };
 
-#define HOMEPAGE "http://www.google.com/webhp?hl=en&complete=0&SA=N"
+#define HOMEPAGE "http://www.google.com/webhp?hl=en&complete=0&safe=off"
 
 
 #define MODKEY GDK_CONTROL_MASK

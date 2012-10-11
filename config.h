@@ -24,7 +24,7 @@ static char *strictssl      = FALSE; /* Refuse untrusted SSL connections */
 
 
 static SearchEngine searchengines[] = {
-    { "g",   "http://www.google.com/search?hl=en&complete=0&safe=off&q=%s"   },
+    { "google",   "http://www.google.com/search?hl=en&complete=0&safe=off&q=%s"   },
 };
 
 #define HOMEPAGE "http://www.google.com/webhp?hl=en&complete=0&safe=off"
@@ -54,7 +54,7 @@ static Key keys[] = {
     { 0,                    GDK_Escape, stop,       { 0 } },
     { MODKEY,               GDK_o,      source,     { 0 } },
     { MODKEY,               GDK_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO") },
-    { 0,      	  	       GDK_slash,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND") },
+    { MODKEY,      	  	       GDK_slash,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND") },
     { MODKEY,               GDK_n,      find,       { .b = TRUE } },
     { MODKEY|GDK_SHIFT_MASK,GDK_n,      find,       { .b = FALSE } },
 };
